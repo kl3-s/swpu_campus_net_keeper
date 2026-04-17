@@ -39,7 +39,7 @@ schtasks /create /tn "CampusNet" /tr "pythonw C:\path\to\campus_net_keepalive.py
 
 ## 工作原理
 
-每 10 分钟 ping 一次门户地址，若失败则调用 Srun 登录接口自动重新认证。日志写入同目录 `campus_net.log`。
+每 3 秒 ping 一次门户地址，若失败则调用 Srun 登录接口自动重新认证。日志写入同目录 `campus_net.log`，超过 1MB 自动滚动。
 
 ## 注意
 
